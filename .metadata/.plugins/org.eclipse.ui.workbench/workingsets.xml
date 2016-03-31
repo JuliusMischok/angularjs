@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workingSetManager>
+<workingSet editPageId="org.eclipse.wst.jsdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1459428113079_1" label="own files" name="own files">
+<item elementID="=demo/&lt;app\/fonts" factoryID="org.eclipse.wst.jsdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=demo/&lt;app\/images" factoryID="org.eclipse.wst.jsdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=demo/&lt;app" factoryID="org.eclipse.wst.jsdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=demo/&lt;app\/styles" factoryID="org.eclipse.wst.jsdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=demo/&lt;app\/scripts" factoryID="org.eclipse.wst.jsdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1459371136692_0" label="Window Working Set" name="Aggregate for window 1459371136691"/>
 </workingSetManager>
