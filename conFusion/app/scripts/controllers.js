@@ -88,5 +88,15 @@ angular.module('confusionApp')
                 $scope.comment = {author: '', rating: 5, comment: '', date: ''};
             };
         }])
-
-;
+        
+        .controller('IndexController', ['$scope', 'corporateFactory', 'menuFactory', function($scope, corporateFactory, menuFactory) {
+        	$scope.featureddish = menuFactory.getDish(0);
+        	
+        	$scope.promotion = menuFactory.getPromotion(0);
+        	
+        	$scope.specialist = corporateFactory.getLeader(3);
+        }])
+        
+        .controller('AboutController', ['$scope', 'corporateFactory', function($scope, corporateFactory) {
+        	$scope.leaders = corporateFactory.getLeaders();
+        }]);

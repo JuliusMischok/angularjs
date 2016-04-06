@@ -72,6 +72,7 @@ gulp.task('watch', ['browser-sync'], function() {
 gulp.task('browser-sync', ['default'], function () {
 	var files = [
 				'app/**/*.html',
+				'app/views/**/*.html',
 				'app/styles/**/*.css',
 				'app/images/**/*.png',
 				'app/scripts/**/*.js',
