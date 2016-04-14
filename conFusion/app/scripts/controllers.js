@@ -11,11 +11,10 @@ angular.module('confusionApp')
             $scope.showMenu = false;
             $scope.message = "Loading...";
             
-            $scope.dishes= [];
-            menuFactory.getDishes()
-            .then(
+            $scope.dishes = [];
+            menuFactory.getDishes().query(
             		function(response) {
-            			$scope.dishes = response.data;
+            			$scope.dishes = response;
             			$scope.showMenu = true;
             		},
             		function(response) {
@@ -82,14 +81,13 @@ angular.module('confusionApp')
 
         .controller('DishDetailController', ['$scope', '$stateParams', 'menuFactory', function($scope, $stateParams, menuFactory) {
 
-        	$scope.dish = {};
         	$scope.showDish = false;
         	$scope.message = "Loading...";
         	
-        	menuFactory.getDish(parseInt($stateParams.id, 10))
-        	.then(
+        	$scope.dish = menuFactory.getDishes().get({id:parseInt($stateParams.id, 10)})
+        	.$promise.then(
         			function(response) {
-        				$scope.dish = response.data;
+        				$scope.dish = response;
         				$scope.showDish = true;
         			},
         			function(response) {
@@ -98,7 +96,7 @@ angular.module('confusionApp')
         	);
         }])
 
-        .controller('DishCommentController', ['$scope', function($scope) {
+        .controller('DishCommentController', ['$scope', 'menuFactory', function($scope, menuFactory) {
         	
         	$scope.comment = {author: '', rating: 5, comment: '', date: ''};
             
@@ -108,22 +106,21 @@ angular.module('confusionApp')
         		$scope.comment.rating = parseInt($scope.comment.rating); // Need to do this to enable sorting by rating
         		
                 $scope.dish.comments.push($scope.comment);
-                
+                menuFactory.getDishes().update({id: $scope.dish.id}, $scope.dish);
+        		
                 $scope.commentForm.$setPristine();
-    			
-                $scope.comment = {author: '', rating: 5, comment: '', date: ''};
+    			$scope.comment = {author: '', rating: 5, comment: '', date: ''};
             };
         }])
         
         .controller('IndexController', ['$scope', 'corporateFactory', 'menuFactory', function($scope, corporateFactory, menuFactory) {
-        	$scope.featureddish = {};
         	$scope.showDish = false;
         	$scope.message = "Loading...";
         	
-        	menuFactory.getDish(0)
-        	.then(
+        	$scope.featureddish = menuFactory.getDishes().get({id: 0})
+        	.$promise.then(
         			function(response) {
-        				$scope.featureddish = response.data;
+        				$scope.featureddish = response;
         				$scope.showDish = true;
         			},
         			function(response) {

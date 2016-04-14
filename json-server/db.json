@@ -47,7 +47,7 @@
       "image": "images/zucchipakoda.png",
       "category": "appetizer",
       "label": "",
-      "price": "1.99",
+      "price": 1.99,
       "description": "Deep fried Zucchini coated with mildly spiced Chickpea flour batter accompanied with a sweet-tangy tamarind sauce",
       "comments": [
         {
@@ -79,6 +79,18 @@
           "comment": "It's your birthday, we're gonna party!",
           "author": "25 Cent",
           "date": "2011-12-02T17:57:28.556094Z"
+        },
+        {
+          "author": "JJJ",
+          "rating": 1,
+          "comment": "Horrible!",
+          "date": "2016-04-14T12:56:26.651Z"
+        },
+        {
+          "author": "Test",
+          "rating": 2,
+          "comment": "Test",
+          "date": "2016-04-14T12:56:46.761Z"
         }
       ]
     },
