@@ -12,7 +12,7 @@ angular.module('confusionApp')
             $scope.message = "Loading...";
             
             $scope.dishes = [];
-            typeof menuFactory.getDishes().query(
+            menuFactory.getDishes().query(
             		function(response) {
             			$scope.dishes = response;
             			$scope.showMenu = true;
