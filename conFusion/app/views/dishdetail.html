@@ -1,6 +1,9 @@
 <div class="container">
 	<div class="row row-content" ng-controller="DishDetailController">
-		<div class="col-xs-12">
+		<div class="col-xs-12" ng-if="!showDish">
+			<h3>{{message}}</h3>
+		</div>
+		<div class="col-xs-12" ng-if="showDish">
 			<button class="btn btn-xs btn-primary pull-right" type="button" ui-sref="app.menu">
 				Back to Menu
 			</button>
@@ -19,7 +22,7 @@
 			</div>
 		</div>
 
-		<div class="col-xs-9 col-xs-offset-1">
+		<div class="col-xs-9 col-xs-offset-1" ng-if="showDish">
 			<h3 style="display: inline; margin-right: 25px;">Customer Comments</h3>
 			<label for="orderby">Sort by:</label>
 			<input name="orderby" type="text" ng-model="sortby"/>
@@ -35,7 +38,7 @@
 			</ul>
 		</div>
 
-		<div class="col-xs-9 col-xs-offset-1" ng-controller="DishCommentController">
+		<div class="col-xs-9 col-xs-offset-1" ng-controller="DishCommentController" ng-if="showDish">
 			<ul class="list-unstyled" ng-show="commentForm.$valid && !commentForm.$pristine">
 				<li>
 					<blockquote>
