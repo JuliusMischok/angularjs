@@ -1,11 +1,11 @@
 <div class="container" ng-controller="IndexController">
 	<div class="row row-content">
-		<div class="col-xs-12 col-sm-3 col-sm-push-9">
+		<div class="col-xs-12" ng-if="!showDish">
+			<h3>{{dishMessage}}</h3>
+		</div>
+		<div class="col-xs-12 col-sm-3 col-sm-push-9" ng-if="showDish">
 			<p style="padding: 20px;"></p>
 			<h3 align=center>Our Lipsmacking Culinary Creations</h3>
-		</div>
-		<div class="col-xs-12" ng-if="!showDish">
-			<h3>{{message}}</h3>
 		</div>
 		<div class="col-xs-12 col-sm-9 col-sm-pull-3" ng-if="showDish">
 			<div class="media">
@@ -26,11 +26,14 @@
 	</div>
 
 	<div class="row row-content">
-		<div class="col-xs-12 col-sm-3">
+		<div class="col-xs-12" ng-if="!showPromotion">
+			<h3>{{promotionMessage}}</h3>
+		</div>
+		<div class="col-xs-12 col-sm-3" ng-if="showPromotion">
 			<p style="padding: 20px;"></p>
 			<h3 align=center>This Month's Promotions</h3>
 		</div>
-		<div class="col-xs-12 col-sm-9">
+		<div class="col-xs-12 col-sm-9" ng-if="showPromotion">
 			<div class="media">
 				<div class="media-body">
 					<h2 class="media-heading">
@@ -47,11 +50,14 @@
 	</div>
 
 	<div class="row row-content">
-		<div class="col-xs-12 col-sm-3 col-sm-push-9">
+		<div class="col-xs-12" ng-if="!showSpecialist">
+			<h3>{{specialistMessage}}</h3>
+		</div>
+		<div class="col-xs-12 col-sm-3 col-sm-push-9" ng-if="showSpecialist">
 			<p style="padding: 20px;"></p>
 			<h3 align=center>Meet our Culinary Specialists</h3>
 		</div>
-		<div class="col-xs-12 col-sm-9 col-sm-pull-3">
+		<div class="col-xs-12 col-sm-9 col-sm-pull-3" ng-if="showSpecialist">
 			<div class="media">
 				<div class="media-left media-middle">
 					<img class="media-object img-thumbnail" ng-src={{specialist.image}} alt="{{specialist.name}}">
